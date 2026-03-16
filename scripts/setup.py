@@ -173,12 +173,65 @@ def discover_hooks(settings: dict | None) -> list[dict]:
     return hooks
 
 
+def get_repo_description(path: Path) -> str:
+    """Try to extract a meaningful description from the repo."""
+    # 1. Try package.json description
+    pkg = path / "package.json"
+    if pkg.exists():
+        try:
+            data = json.loads(pkg.read_text(encoding="utf-8"))
+            desc = data.get("description", "")
+            if desc and len(desc) > 5:
+                return desc[:200]
+        except (json.JSONDecodeError, OSError):
+            pass
+    # 2. Try pyproject.toml description
+    pyproject = path / "pyproject.toml"
+    if pyproject.exists():
+        try:
+            text = pyproject.read_text(encoding="utf-8", errors="replace")
+            match = re.search(r'description\s*=\s*"([^"]+)"', text)
+            if match:
+                return match.group(1)[:200]
+        except OSError:
+            pass
+    # 3. Try first meaningful line of README.md
+    for readme_name in ("README.md", "readme.md", "Readme.md"):
+        readme = path / readme_name
+        if readme.exists():
+            try:
+                lines = readme.read_text(encoding="utf-8", errors="replace").split("\n")
+                for line in lines:
+                    stripped = line.strip().lstrip("#").strip()
+                    # Skip empty lines, badges, images, and the repo name itself
+                    if not stripped or "[![" in stripped or stripped.startswith("[!") or stripped.startswith("!["):
+                        continue
+                    # Skip if it's just the repo name
+                    if stripped.lower().replace("-", " ") == path.name.lower().replace("-", " "):
+                        continue
+                    return stripped[:200]
+            except OSError:
+                pass
+    # 4. Fallback
+    return f"Repository: {path.name}"
+
+
 def discover_repos() -> tuple[list[dict], list[dict]]:
-    """Scan home directory top-level for git repos."""
+    """Scan home directory and common project dirs for git repos."""
     repos: list[dict] = []
     projects: list[dict] = []
-    # Common project locations
-    search_dirs = [HOME]
+    seen_ids: set[str] = set()
+
+    # Common project locations (home top-level + common subdirs)
+    search_dirs = [
+        HOME,
+        HOME / "projects",
+        HOME / "repos",
+        HOME / "code",
+        HOME / "dev",
+        HOME / "src",
+        HOME / "workspace",
+    ]
     for search_dir in search_dirs:
         if not search_dir.is_dir():
             continue
@@ -189,6 +242,10 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
             if not git_dir.exists():
                 continue
             project_id = entry.name.lower().replace(" ", "-")
+            if project_id in seen_ids:
+                continue
+            seen_ids.add(project_id)
+
             # Try to get remote URL
             remote_url = ""
             git_config = git_dir / "config"
@@ -205,11 +262,13 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
             if "github.com" in remote_url:
                 visibility = "public"  # default guess; can be updated
 
+            description = get_repo_description(entry)
+
             repos.append({
                 "name": entry.name,
                 "url": remote_url,
                 "visibility": visibility,
-                "description": f"Repository: {entry.name}",
+                "description": description,
                 "project": project_id,
             })
 
@@ -218,7 +277,7 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
             projects.append({
                 "id": project_id,
                 "name": entry.name,
-                "description": f"Project: {entry.name}",
+                "description": description,
                 "category": "active",
                 "techStack": tech_stack,
                 "status": "active",
