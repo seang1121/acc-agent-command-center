@@ -1,185 +1,245 @@
-# ACC — Agent Command Center
+<p align="center">
+  <img src="public/favicon.svg" alt="ACC" width="80" />
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Node 18+](https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white)](https://nodejs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.2-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+<h1 align="center">Agent Command Center</h1>
 
-**See your entire [Claude Code](https://docs.anthropic.com/en/docs/claude-code) ecosystem in one dashboard.** AI agents, MCP servers, hooks, plugins, repos, and automations — auto-discovered, zero config.
+<p align="center">
+  <strong>Your Claude Code setup is more powerful than you think.<br>Now you can actually see it.</strong>
+</p>
 
-<!-- Replace this block with a real screenshot of your dashboard -->
-```
- ┌──────────┐ ┌─────────────────────────────────────────────────────────┐
- │ Overview  │ │  My Command Center                        [Ctrl+K]    │
- │ Scraper   │ ├─────────────────────────────────────────────────────────┤
- │ API       │ │  ┌─────────┐  ┌─────────┐  ┌─────────┐               │
- │ Dashboard │ │  │ 4 Agents│  │ 3 Repos │  │ 6 Tools │  Stats Bar    │
- │───────────│ │  └─────────┘  └─────────┘  └─────────┘               │
- │ Projects  │ │                                                       │
- │ GitHub    │ │    ┌──── Relationship Map ────┐                       │
- │ Automate  │ │    │   api ── [scraper] ── ui │                       │
- │ Claude    │ │    └──────────────────────────┘                       │
- │           │ │                                                       │
- │ ACC v1.0  │ │  ┌──────────┐ ┌──────────┐ ┌──────────┐             │
- └──────────┘ │  │ Agent    │ │ Scheduler│ │ MCP      │  Card Grid   │
-              │  │ Card     │ │ Card     │ │ Card     │              │
-              │  └──────────┘ └──────────┘ └──────────┘              │
-              └─────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" /></a>
+  <img src="https://img.shields.io/badge/Node.js-18%2B-339933?logo=node.js&logoColor=white" alt="Node 18+" />
+  <img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" alt="React 19" />
+  <img src="https://img.shields.io/badge/Tailwind-4.2-06B6D4?logo=tailwindcss&logoColor=white" alt="Tailwind" />
+</p>
 
-## Why?
+<p align="center">
+  <a href="#3-commands-to-your-dashboard">Quick Start</a> &bull;
+  <a href="#what-it-finds">What It Finds</a> &bull;
+  <a href="#features">Features</a> &bull;
+  <a href="#make-it-yours">Customize</a> &bull;
+  <a href="CONTRIBUTING.md">Contribute</a>
+</p>
 
-Claude Code power users accumulate tools fast — slash commands, MCP servers, hooks, agents, plugins spread across `~/.claude/`, project dirs, and settings files. There's no single place to see what you've built.
+---
 
-ACC fixes that. Point it at your system, and it maps everything into a searchable, filterable dashboard with a relationship graph showing how your projects connect.
+<!-- TODO: Replace with a real screenshot of your running dashboard -->
+<!-- Take a screenshot at localhost:3100 after running setup.py and drop it here -->
+<p align="center">
+  <img src="https://placehold.co/900x500/111827/3b82f6?text=Your+Dashboard+Here%0A%0Anpm+run+dev+%E2%86%92+localhost%3A3100&font=source-sans-pro" alt="Dashboard Preview" width="900" />
+</p>
 
-## Features
+---
 
-- **Auto-discovery** — scans `~/.claude/` and local git repos, generates all dashboard data automatically
-- **Relationship map** — force-directed graph showing how your projects connect (auto-calculated layout, no manual positioning)
-- **Per-project deep dives** — agents, schedulers, cron jobs, scripts, MCP servers grouped by project
-- **Claude ecosystem view** — all your commands, agents, skills, hooks, and marketplace plugins in one tab
-- **Global search** — `Ctrl+K` to filter across everything
-- **Auto-sync hook** — optional Stop hook keeps the dashboard current after every Claude Code session
-- **Zero personal data committed** — `.example.json` templates ship in git; your real data stays gitignored
+## The Problem
 
-## Quick Start
+You've been building with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) for weeks. Maybe months. You've got:
 
-### Prerequisites
+- 5 slash commands you wrote at 2am and forgot about
+- 8 MCP servers — some from the marketplace, some custom
+- Hooks that guard secrets, lint on save, sync dashboards
+- 14 repos with agents, schedulers, and cron jobs scattered across them
+- A `settings.json` that's 200 lines deep
 
-- **Node.js 18+** and npm
-- **Python 3.10+** (for the auto-scanner)
-- **[Claude Code](https://docs.anthropic.com/en/docs/claude-code)** installed (the scanner reads `~/.claude/`)
+**Where does it all live? What's connected to what? What's even running?**
 
-### Install and run
+You don't know. Nobody does. There's no single view.
+
+## The Fix
 
 ```bash
 git clone https://github.com/seang1121/acc-agent-command-center.git
 cd acc-agent-command-center
 npm install --legacy-peer-deps
+python scripts/setup.py
 npm run dev
 ```
 
-Opens at [http://localhost:3100](http://localhost:3100) with example "Acme Labs" data.
+ACC scans your entire Claude Code setup — `~/.claude/`, your settings, your repos — and builds a live dashboard showing **everything you've built, how it connects, and what state it's in.**
 
-### Populate with your data
+One command. Zero manual config. Your whole ecosystem, visualized.
 
-```bash
-python scripts/setup.py
-# or
-npm run setup
-```
+---
 
-The scanner discovers:
+## What It Finds
 
-| What | Where it looks |
-|------|---------------|
-| Commands, agents, skills | `~/.claude/commands/`, `agents/`, `skills/` |
-| MCP servers & plugins | `~/.claude/settings.json` |
-| Hooks | `~/.claude/settings.json` + `~/.claude/hooks/` |
-| Git repos & tech stacks | `~/`, `~/projects/`, `~/repos/`, `~/code/`, `~/dev/` |
-| Project descriptions | `package.json` description, `README.md` first line |
+The scanner is opinionated about where to look and aggressive about what it pulls:
 
-Refresh the dashboard to see your data.
+| Discovery | Source | What You Get |
+|-----------|--------|-------------|
+| **Slash commands, agents, skills** | `~/.claude/commands/`, `agents/`, `skills/` | Name, type, description (parsed from frontmatter) |
+| **MCP servers** | `~/.claude/settings.json` | Server name, transport, command, env vars |
+| **Marketplace plugins** | `settings.json` `enabledPlugins` | Every plugin you've installed or enabled |
+| **Hooks** | `settings.json` hooks + `~/.claude/hooks/` | Event type, matcher, command — the full picture |
+| **Git repos** | `~/`, `~/projects/`, `~/repos/`, `~/code/`, `~/dev/`, `~/workspace/` | Remote URL, tech stack auto-detected, description from `package.json` or `README.md` |
+| **Tech stacks** | `package.json`, `requirements.txt`, `Cargo.toml`, `go.mod`, etc. | Python, TypeScript, React, Flask, Rust, Go, Docker — 16+ frameworks detected |
 
-## Auto-Sync (Optional)
+Everything lands in `src/data/*.json`. Your data stays **gitignored** — only example templates are committed.
 
-Keep the dashboard updated automatically with a Claude Code Stop hook:
+---
+
+## Features
+
+### Relationship Map
+A force-directed graph that shows how your projects connect. Node positions are **auto-calculated from connectivity** — no manual layout, no config files. Add a project, add an edge, and the graph reorganizes.
+
+### Per-Project Deep Dives
+Click any project in the sidebar to see its agents, schedulers, cron jobs, scripts, repos, and MCP servers — all in one view. Category groupings configurable per project.
+
+### Claude Ecosystem Tab
+Every Claude Code tool you own on one screen: commands, agents, skills, hooks, marketplace plugins. See what's installed, what's custom, and what's built-in.
+
+### Global Search
+`Ctrl+K` filters across every tab — projects, agents, tools, repos. Instant results as you type.
+
+### Auto-Sync Hook
+Install a Claude Code Stop hook and your dashboard **updates itself** every time you end a session:
 
 ```bash
 bash scripts/install-hook.sh
 ```
 
-This re-scans your system every time a Claude Code session ends. To remove it, edit `~/.claude/settings.json` and delete the `auto_sync.py` entry from `hooks.Stop`.
+One command. Runs `setup.py` on every session close. Your dashboard is always current.
 
-## Configuration
+### Privacy by Default
+Real data files are gitignored. Only `.example.json` templates (with fictional "Acme Labs" data) are committed. Clone this repo, push it to your own GitHub — zero risk of leaking your setup.
 
-`acc.config.json` controls the dashboard layout:
+---
+
+## 3 Commands to Your Dashboard
+
+**Prerequisites:** Node.js 18+, Python 3.10+, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
+
+```bash
+# 1. Clone and install
+git clone https://github.com/seang1121/acc-agent-command-center.git
+cd acc-agent-command-center
+npm install --legacy-peer-deps
+
+# 2. Scan your system (discovers everything automatically)
+python scripts/setup.py
+
+# 3. Launch
+npm run dev
+```
+
+Open [localhost:3100](http://localhost:3100). That's it.
+
+Don't have Claude Code yet? Run `npm run dev` anyway — you'll see a working dashboard with example data so you know what you're getting.
+
+---
+
+## Make It Yours
+
+### Change what shows in the sidebar
+
+Edit `acc.config.json`:
 
 ```json
 {
   "title": "My Command Center",
   "projectTabs": [
-    { "projectId": "my-project", "label": "My Project", "icon": "bot" }
+    { "projectId": "my-api", "label": "API", "icon": "server" },
+    { "projectId": "my-bot", "label": "Bot", "icon": "bot" }
   ],
-  "projects": [...],
-  "centerNode": "my-project"
+  "centerNode": "my-api"
 }
 ```
 
-Available icons: `overview` `projects` `github` `automations` `claude` `bot` `chart` `server` `database` `wrench` `globe` `dollar` `sun`
+Icons: `overview` `projects` `github` `automations` `claude` `bot` `chart` `server` `database` `wrench` `globe` `dollar` `sun`
 
-## Customization
+### Edit data directly
 
-- **Edit data** — modify `src/data/*.json` directly to add/update entries
-- **Change tabs** — edit `acc.config.json` to control sidebar navigation
-- **Extend the scanner** — add discovery functions in `scripts/setup.py`
-- **Add card types** — create a new component in `src/components/cards/`
+All data lives in `src/data/*.json` — 11 files, each with a clear schema. Edit them directly or re-run the scanner. Hot reload picks up changes instantly.
 
-The relationship map auto-calculates node positions from connectivity — no hardcoded coordinates.
+### Extend the scanner
+
+Add a `discover_*()` function in `scripts/setup.py`, call it from `main()`, and save output with `save_json()`. The scanner is pure Python with zero dependencies.
+
+### Use the slash command
+
+If you're in Claude Code, run `/setup-acc` to trigger the scanner from inside your session.
+
+---
 
 <details>
-<summary><strong>Data file schemas</strong></summary>
+<summary><strong>Data File Reference (11 files)</strong></summary>
 
-All data lives in `src/data/*.json`. Each file has a `.example.json` template:
+| File | What's Inside |
+|------|--------------|
+| `agents.json` | AI agents — type, purpose, weight, data sources, module path, status |
+| `schedulers.json` | Scheduled tasks — cron expression, timezone, trigger type |
+| `cron-jobs.json` | Cron jobs — enabled/disabled, error count, delivery target |
+| `repos.json` | Git repos — remote URL, visibility, description, project mapping |
+| `projects.json` | Projects — tech stack, status, highlights, related projects |
+| `infrastructure.json` | MCP servers, hooks, and scripts — the glue layer |
+| `claude-tools.json` | Commands, agents, skills — everything in `~/.claude/` |
+| `marketplace-plugins.json` | Installed plugins — kind, transport, install count |
+| `relationships.json` | Graph edges — from/to/label/type for the relationship map |
+| `descriptions.json` | Section descriptions — override default labels per category |
+| `archived.json` | Deprecated repos — kept for reference, hidden from active views |
 
-| File | Contents |
-|------|----------|
-| `agents.json` | AI agents with type, purpose, weight, data sources |
-| `schedulers.json` | Scheduled tasks with cron expressions |
-| `cron-jobs.json` | Cron jobs with status and error tracking |
-| `repos.json` | Git repositories with visibility and project mapping |
-| `projects.json` | Projects with tech stack, status, and highlights |
-| `infrastructure.json` | MCP servers, hooks, and scripts |
-| `claude-tools.json` | Claude Code commands, agents, and skills |
-| `marketplace-plugins.json` | Installed and available plugins |
-| `relationships.json` | Project relationship graph edges |
-| `descriptions.json` | Section description overrides |
-| `archived.json` | Archived/deprecated repositories |
+Each file has a `.example.json` template with fictional Acme Labs data.
 
 </details>
 
 <details>
-<summary><strong>Project structure</strong></summary>
+<summary><strong>Project Structure</strong></summary>
 
 ```
 acc-agent-command-center/
 ├── src/
-│   ├── components/     # React components (cards, layout, tabs, overview, shared)
-│   ├── config/         # Config loader and icon registry
-│   ├── data/           # JSON data files (*.example.json committed, *.json gitignored)
-│   ├── hooks/          # React hooks
-│   ├── layout/         # Force-directed graph layout engine
-│   ├── types/          # TypeScript type definitions
-│   └── utils/          # Formatters and helpers
+│   ├── components/          # 25 React components
+│   │   ├── cards/           # AgentCard, RepoCard, McpCard, CronJobCard...
+│   │   ├── layout/          # Header, Sidebar, SearchBar, CardGrid
+│   │   ├── overview/        # OverviewTab, RelationshipMap, StatsBar
+│   │   ├── shared/          # StatusBadge, TagPill, FilterBar, InfoRow
+│   │   └── tabs/            # ProjectDetail, Automations, Claude, GitHub
+│   ├── config/              # Config loader + icon registry
+│   ├── data/                # 11 JSON data files (gitignored) + 11 examples
+│   ├── hooks/               # useDashboardData hook
+│   ├── layout/              # Force-directed graph engine
+│   ├── types/               # TypeScript types (strict, no `any`)
+│   └── utils/               # Formatters, color maps
 ├── scripts/
-│   ├── setup.py        # Auto-scanner (generates data files)
-│   ├── auto_sync.py    # Lightweight re-scan for hook usage
-│   ├── init-data.ts    # Copies example data on first run
-│   └── install-hook.sh # Installs auto-sync as Stop hook
+│   ├── setup.py             # The auto-scanner (zero dependencies)
+│   ├── auto_sync.py         # Lightweight wrapper for hook usage
+│   ├── init-data.ts         # Copies examples on first `npm run dev`
+│   └── install-hook.sh      # One-command auto-sync installer
 ├── .claude/commands/
-│   └── setup-acc.md    # /setup-acc slash command
-├── acc.config.example.json
+│   └── setup-acc.md         # /setup-acc slash command
+├── acc.config.example.json  # Dashboard config template
+├── CONTRIBUTING.md
 └── package.json
 ```
 
 </details>
 
+---
+
 ## Tech Stack
 
-- **React 19** + **TypeScript 5.9** (strict mode)
-- **Vite 8** — dev server and build
-- **Tailwind CSS 4.2** — dark theme only
-- **Python 3** — auto-scanner scripts
+| Layer | Tech | Why |
+|-------|------|-----|
+| **UI** | React 19 + TypeScript 5.9 (strict) | Type-safe components, zero `any` |
+| **Styling** | Tailwind CSS 4.2 | Dark theme only, utility-first |
+| **Build** | Vite 8 | Sub-second hot reload |
+| **Scanner** | Python 3 (stdlib only) | Zero dependencies, runs anywhere |
+| **Graph** | Custom force-directed layout | Auto-positions from connectivity, no D3 dependency |
+
+---
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md) for development setup and guidelines.
+See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome — especially new card types, scanner sources, and theme improvements.
 
 ## Credits
 
-Built for the [Claude Code](https://docs.anthropic.com/en/docs/claude-code) ecosystem.
+Built for the [Claude Code](https://docs.anthropic.com/en/docs/claude-code) ecosystem by [@seang1121](https://github.com/seang1121).
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE) — use it, fork it, ship it.
