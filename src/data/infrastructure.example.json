@@ -1,0 +1,55 @@
+{
+  "mcpServers": [
+    {
+      "name": "acme-data-mcp",
+      "version": "1.2.0",
+      "transport": "stdio",
+      "command": "npx acme-data-mcp",
+      "description": "Exposes scraped data and analysis results to Claude",
+      "project": "acme-scraper"
+    }
+  ],
+  "hooks": [
+    {
+      "name": "secret-guard",
+      "event": "PreToolUse",
+      "matcher": "Read|Edit|Write",
+      "command": "python scripts/check_secrets.py",
+      "description": "Prevents Claude from reading or writing files containing secrets",
+      "project": "global"
+    },
+    {
+      "name": "lint-on-save",
+      "event": "PostToolUse",
+      "command": "npm run lint:fix",
+      "description": "Runs linter after any file modification",
+      "project": "acme-dashboard"
+    }
+  ],
+  "scripts": [
+    {
+      "name": "start.sh",
+      "path": "scripts/start.sh",
+      "description": "Starts all services including API, scraper daemon, and dashboard",
+      "critical": true,
+      "frequency": "On boot",
+      "project": "acme-scraper"
+    },
+    {
+      "name": "seed-db.py",
+      "path": "scripts/seed-db.py",
+      "description": "Seeds development database with sample data",
+      "critical": false,
+      "frequency": "As needed",
+      "project": "acme-api"
+    },
+    {
+      "name": "deploy.sh",
+      "path": "scripts/deploy.sh",
+      "description": "Production deployment script with health check verification",
+      "critical": true,
+      "frequency": "On release",
+      "project": "acme-api"
+    }
+  ]
+}

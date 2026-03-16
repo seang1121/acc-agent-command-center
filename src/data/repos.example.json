@@ -1,0 +1,29 @@
+[
+  {
+    "name": "acme-scraper",
+    "url": "https://github.com/acme-labs/acme-scraper",
+    "visibility": "private",
+    "description": "Web scraping pipeline with AI-powered analysis agents",
+    "agentCount": 4,
+    "automationCount": 3,
+    "project": "acme-scraper"
+  },
+  {
+    "name": "acme-api",
+    "url": "https://github.com/acme-labs/acme-api",
+    "visibility": "public",
+    "description": "REST API serving processed data with auth and rate limiting",
+    "agentCount": 0,
+    "automationCount": 2,
+    "project": "acme-api"
+  },
+  {
+    "name": "acme-dashboard",
+    "url": "https://github.com/acme-labs/acme-dashboard",
+    "visibility": "public",
+    "description": "React dashboard for visualizing scraped data and trends",
+    "agentCount": 0,
+    "automationCount": 0,
+    "project": "acme-dashboard"
+  }
+]

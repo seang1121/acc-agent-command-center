@@ -1,0 +1,7 @@
+{
+  "acme-scraper-pipeline": "Sequential data processing pipeline: ingest -> normalize -> analyze -> report",
+  "acme-scraper-analysis": "Parallel analysis agents that score and classify incoming data",
+  "acme-scraper-orchestration": "Coordinates agent execution order and handles error recovery",
+  "monitoring": "Health checks and alerting for all production services",
+  "maintenance": "Automated cleanup, backup, and optimization tasks"
+}

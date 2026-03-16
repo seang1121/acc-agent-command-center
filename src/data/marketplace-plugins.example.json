@@ -1,0 +1,36 @@
+[
+  {
+    "name": "GitHub",
+    "kind": "mcp",
+    "transport": "stdio",
+    "envVars": ["GITHUB_TOKEN"],
+    "installed": true,
+    "installs": 102000,
+    "description": "GitHub integration for issues, PRs, and repository management"
+  },
+  {
+    "name": "Code Review",
+    "kind": "skill",
+    "installed": true,
+    "installs": 117000,
+    "description": "Automated code review with best practice checks"
+  },
+  {
+    "name": "Playwright",
+    "kind": "mcp",
+    "transport": "stdio",
+    "command": "npx @anthropic/mcp-playwright",
+    "installed": false,
+    "installs": 79000,
+    "description": "Browser automation for testing and web scraping"
+  },
+  {
+    "name": "Linear",
+    "kind": "mcp",
+    "transport": "http",
+    "oauth": true,
+    "installed": false,
+    "installs": 45000,
+    "description": "Linear issue tracker integration for project management"
+  }
+]

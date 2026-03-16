@@ -1,0 +1,9 @@
+[
+  {
+    "name": "acme-scraper-v1",
+    "path": "~/repos/acme-scraper-v1",
+    "description": "Original scraper prototype before the AI agent rewrite",
+    "techStack": ["Python", "Shell"],
+    "originalUrl": "https://github.com/acme-labs/acme-scraper-v1"
+  }
+]

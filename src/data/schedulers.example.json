@@ -1,0 +1,24 @@
+[
+  {
+    "name": "Daily Report Generator",
+    "schedule": "Every day at 8:00 AM",
+    "cron": "0 8 * * *",
+    "triggerType": "cron",
+    "timezone": "US/Eastern",
+    "status": "active",
+    "project": "acme-scraper",
+    "category": "content",
+    "description": "Generates and distributes the daily analysis report"
+  },
+  {
+    "name": "Data Cleanup",
+    "schedule": "Sunday at midnight",
+    "cron": "0 0 * * 0",
+    "triggerType": "cron",
+    "timezone": "UTC",
+    "status": "active",
+    "project": "acme-api",
+    "category": "maintenance",
+    "description": "Archives old records and optimizes database indexes"
+  }
+]

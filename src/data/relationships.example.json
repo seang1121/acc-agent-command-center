@@ -1,0 +1,32 @@
+[
+  {
+    "from": "acme-scraper",
+    "to": "acme-api",
+    "label": "feeds data",
+    "type": "data"
+  },
+  {
+    "from": "acme-api",
+    "to": "acme-dashboard",
+    "label": "serves data",
+    "type": "data"
+  },
+  {
+    "from": "acme-scraper",
+    "to": "acme-dashboard",
+    "label": "triggers refresh",
+    "type": "trigger"
+  },
+  {
+    "from": "acme-api",
+    "to": "acme-scraper",
+    "label": "webhook config",
+    "type": "trigger"
+  },
+  {
+    "from": "acme-dashboard",
+    "to": "acme-api",
+    "label": "API calls",
+    "type": "data"
+  }
+]

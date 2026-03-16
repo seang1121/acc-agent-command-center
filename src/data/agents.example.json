@@ -1,0 +1,50 @@
+[
+  {
+    "name": "DataIngestionAgent",
+    "type": "daemon",
+    "purpose": "Continuously monitors external APIs for new data and normalizes it into the internal schema",
+    "weight": null,
+    "scoreRange": null,
+    "dataSources": ["REST APIs", "webhooks", "S3 buckets"],
+    "module": "src/agents/data_ingestion.py",
+    "status": "active",
+    "project": "acme-scraper",
+    "category": "pipeline"
+  },
+  {
+    "name": "SentimentAnalyzer",
+    "type": "parallel",
+    "purpose": "Analyzes text sentiment from collected articles using a fine-tuned transformer model",
+    "weight": 0.35,
+    "scoreRange": "-1.0 to 1.0",
+    "dataSources": ["news-feed", "social-api"],
+    "module": "src/agents/sentiment.py",
+    "status": "active",
+    "project": "acme-scraper",
+    "category": "analysis"
+  },
+  {
+    "name": "ReportOrchestrator",
+    "type": "orchestrator",
+    "purpose": "Coordinates all analysis agents and compiles final daily report",
+    "weight": null,
+    "scoreRange": null,
+    "dataSources": ["SentimentAnalyzer", "DataIngestionAgent", "TrendDetector"],
+    "module": "src/agents/orchestrator.py",
+    "status": "active",
+    "project": "acme-scraper",
+    "category": "orchestration"
+  },
+  {
+    "name": "TrendDetector",
+    "type": "parallel",
+    "purpose": "Identifies emerging trends by comparing current data against historical baselines",
+    "weight": 0.40,
+    "scoreRange": "0 to 100",
+    "dataSources": ["time-series-db", "news-feed"],
+    "module": "src/agents/trends.py",
+    "status": "active",
+    "project": "acme-scraper",
+    "category": "analysis"
+  }
+]

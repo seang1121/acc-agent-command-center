@@ -1,0 +1,20 @@
+[
+  {
+    "name": "setup-acc",
+    "type": "command",
+    "filePath": ".claude/commands/setup-acc.md",
+    "description": "Auto-scan system to discover and populate ACC dashboard data"
+  },
+  {
+    "name": "Explore",
+    "type": "agent",
+    "filePath": "built-in",
+    "description": "Fast agent for exploring codebases with pattern matching and keyword search"
+  },
+  {
+    "name": "Plan",
+    "type": "agent",
+    "filePath": "built-in",
+    "description": "Software architect agent for designing implementation plans"
+  }
+]

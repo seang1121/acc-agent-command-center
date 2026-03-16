@@ -1,0 +1,44 @@
+{
+  "name": "acc-agent-command-center",
+  "private": false,
+  "version": "1.0.0",
+  "description": "Agent Command Center — self-configuring dashboard for visualizing developer automations, AI agents, MCP servers, and Claude ecosystem tools",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "predev": "tsx scripts/init-data.ts",
+    "prebuild": "tsx scripts/init-data.ts",
+    "setup": "python scripts/setup.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seang1121/acc-agent-command-center.git"
+  },
+  "keywords": ["claude-code", "dashboard", "ai-agents", "mcp", "developer-tools", "automation"],
+  "author": "seang1121",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@tailwindcss/vite": "^4.2.1",
+    "@types/node": "^24.12.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.0",
+    "eslint": "^9.39.4",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.4.0",
+    "tailwindcss": "^4.2.1",
+    "tsx": "^4.19.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^8.0.0"
+  }
+}

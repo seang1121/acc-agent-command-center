@@ -1,0 +1,41 @@
+[
+  {
+    "id": "health-check",
+    "name": "API Health Check",
+    "enabled": true,
+    "cron": "*/5 * * * *",
+    "timezone": "UTC",
+    "delivery": "Slack #ops-alerts",
+    "status": "active",
+    "errorCount": 0,
+    "project": "acme-api",
+    "category": "monitoring",
+    "description": "Pings all API endpoints and reports latency to Slack"
+  },
+  {
+    "id": "daily-digest",
+    "name": "Daily Email Digest",
+    "enabled": true,
+    "cron": "0 9 * * 1-5",
+    "timezone": "US/Eastern",
+    "delivery": "Email (team@acme.dev)",
+    "status": "active",
+    "errorCount": 0,
+    "project": "acme-scraper",
+    "category": "reporting",
+    "description": "Sends daily summary of scraped data and analysis results"
+  },
+  {
+    "id": "backup-db",
+    "name": "Database Backup",
+    "enabled": true,
+    "cron": "0 2 * * *",
+    "timezone": "UTC",
+    "delivery": "S3 backup bucket",
+    "status": "active",
+    "errorCount": 0,
+    "project": "acme-api",
+    "category": "maintenance",
+    "description": "Creates encrypted database backup and uploads to S3"
+  }
+]

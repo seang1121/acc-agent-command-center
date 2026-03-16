@@ -1,0 +1,24 @@
+{
+  "title": "Acme Labs Command Center",
+  "projectTabs": [
+    { "projectId": "acme-scraper", "label": "Scraper", "icon": "bot" },
+    { "projectId": "acme-api", "label": "API", "icon": "server" },
+    { "projectId": "acme-dashboard", "label": "Dashboard", "icon": "chart" }
+  ],
+  "projects": [
+    {
+      "projectId": "acme-scraper",
+      "infrastructure": [
+        { "label": "Runtime", "value": "Python 3.12" },
+        { "label": "Database", "value": "SQLite" },
+        { "label": "Port", "value": "5000" }
+      ],
+      "agentCategories": [
+        { "key": "pipeline", "title": "Data Pipeline" },
+        { "key": "analysis", "title": "Analysis Agents" },
+        { "key": "orchestration", "title": "Orchestration" }
+      ]
+    }
+  ],
+  "centerNode": "acme-scraper"
+}

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "acme-scraper",
+    "name": "Acme Scraper",
+    "description": "AI-powered web scraping pipeline with sentiment analysis, trend detection, and automated reporting",
+    "category": "active",
+    "techStack": ["Python", "Flask", "SQLite", "scikit-learn"],
+    "status": "active",
+    "path": "~/projects/acme-scraper",
+    "repoUrl": "https://github.com/acme-labs/acme-scraper",
+    "isGitRepo": true,
+    "highlights": ["4 AI agents", "Daily reports", "Trend detection"],
+    "relatedProjects": ["acme-api", "acme-dashboard"]
+  },
+  {
+    "id": "acme-api",
+    "name": "Acme API",
+    "description": "REST API serving processed scraper data with authentication, rate limiting, and webhook subscriptions",
+    "category": "active",
+    "techStack": ["TypeScript", "Node.js", "PostgreSQL"],
+    "status": "active",
+    "path": "~/projects/acme-api",
+    "repoUrl": "https://github.com/acme-labs/acme-api",
+    "isGitRepo": true,
+    "highlights": ["REST + WebSocket", "Rate limiting", "Auth"],
+    "relatedProjects": ["acme-scraper", "acme-dashboard"]
+  },
+  {
+    "id": "acme-dashboard",
+    "name": "Acme Dashboard",
+    "description": "React visualization dashboard displaying scraped data, trends, and analysis results in real-time",
+    "category": "active",
+    "techStack": ["TypeScript", "React", "Tailwind"],
+    "status": "active",
+    "path": "~/projects/acme-dashboard",
+    "repoUrl": "https://github.com/acme-labs/acme-dashboard",
+    "isGitRepo": true,
+    "highlights": ["Real-time charts", "Dark theme", "Responsive"],
+    "relatedProjects": ["acme-api"]
+  }
+]
