@@ -5,7 +5,7 @@
 <h1 align="center">Agent Command Center</h1>
 
 <p align="center">
-  <strong>Your Claude Code setup is more powerful than you think.<br>Now you can actually see it.</strong>
+  <strong>Your AI development setup is more powerful than you think.<br>Now you can actually see it.</strong>
 </p>
 
 <p align="center">
@@ -36,7 +36,7 @@
 
 ## The Problem
 
-You've been building with [Claude Code](https://docs.anthropic.com/en/docs/claude-code) for weeks. Maybe months. You've got:
+You've been building with AI development tools for weeks. Maybe months. You've got:
 
 - 5 slash commands you wrote at 2am and forgot about
 - 8 MCP servers — some from the marketplace, some custom
@@ -58,7 +58,7 @@ python scripts/setup.py
 npm run dev
 ```
 
-ACC scans your entire Claude Code setup — `~/.claude/`, your settings, your repos — and builds a live dashboard showing **everything you've built, how it connects, and what state it's in.**
+ACC scans your entire AI development setup — `~/.claude/`, your settings, your repos — and builds a live dashboard showing **everything you've built, how it connects, and what state it's in.**
 
 One command. Zero manual config. Your whole ecosystem, visualized.
 
@@ -89,14 +89,14 @@ A force-directed graph that shows how your projects connect. Node positions are 
 ### Per-Project Deep Dives
 Click any project in the sidebar to see its agents, schedulers, cron jobs, scripts, repos, and MCP servers — all in one view. Category groupings configurable per project.
 
-### Claude Ecosystem Tab
-Every Claude Code tool you own on one screen: commands, agents, skills, hooks, marketplace plugins. See what's installed, what's custom, and what's built-in.
+### Developer Ecosystem Tab
+Every AI tool you own on one screen: commands, agents, skills, hooks, marketplace plugins. See what's installed, what's custom, and what's built-in.
 
 ### Global Search
 `Ctrl+K` filters across every tab — projects, agents, tools, repos. Instant results as you type.
 
 ### Auto-Sync Hook
-Install a Claude Code Stop hook and your dashboard **updates itself** every time you end a session:
+Install a stop hook and your dashboard **updates itself** every time you end a session:
 
 ```bash
 bash scripts/install-hook.sh
@@ -111,7 +111,7 @@ Real data files are gitignored. Only `.example.json` templates (with fictional "
 
 ## 3 Commands to Your Dashboard
 
-**Prerequisites:** Node.js 18+, Python 3.10+, [Claude Code](https://docs.anthropic.com/en/docs/claude-code) installed
+**Prerequisites:** Node.js 18+, Python 3.10+
 
 ```bash
 # 1. Clone and install
@@ -128,7 +128,7 @@ npm run dev
 
 Open [localhost:3100](http://localhost:3100). That's it.
 
-Don't have Claude Code yet? Run `npm run dev` anyway — you'll see a working dashboard with example data so you know what you're getting.
+Run `npm run dev` to see a working dashboard with example data so you know what you're getting.
 
 ---
 
@@ -161,7 +161,7 @@ Add a `discover_*()` function in `scripts/setup.py`, call it from `main()`, and 
 
 ### Use the slash command
 
-If you're in Claude Code, run `/setup-acc` to trigger the scanner from inside your session.
+Run `/setup-acc` to trigger the scanner from inside your session.
 
 ---
 
@@ -238,7 +238,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md). PRs welcome — especially new card type
 
 ## Credits
 
-Built for the [Claude Code](https://docs.anthropic.com/en/docs/claude-code) ecosystem by [@seang1121](https://github.com/seang1121).
+Built for AI-powered development by [@seang1121](https://github.com/seang1121).
 
 ## License
 
