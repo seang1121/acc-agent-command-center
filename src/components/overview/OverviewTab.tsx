@@ -44,7 +44,7 @@ export function OverviewTab({ data, onNavigate }: Props) {
 
       {data.relationships.length > 0 && (
         <SectionBlock title="Project Relationships" count={data.relationships.length}>
-          <RelationshipMap relationships={data.relationships} data={data} />
+          <RelationshipMap relationships={data.relationships} data={data} onNavigate={onNavigate} />
         </SectionBlock>
       )}
     </div>

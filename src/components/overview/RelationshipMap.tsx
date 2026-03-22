@@ -7,6 +7,7 @@ import { loadConfig } from '../../config/loader'
 interface Props {
   relationships: Relationship[]
   data?: DashboardData
+  onNavigate?: (tabId: string) => void
 }
 
 const edgeTypeColors: Record<string, string> = {
@@ -37,7 +38,7 @@ function curvedPath(x1: number, y1: number, x2: number, y2: number, cx: number, 
   return `M ${x1} ${y1} Q ${cpx} ${cpy} ${x2} ${y2}`
 }
 
-export function RelationshipMap({ relationships, data }: Props) {
+export function RelationshipMap({ relationships, data, onNavigate }: Props) {
   const config = loadConfig()
   const [hoveredNode, setHoveredNode] = useState<string | null>(null)
   const [hoveredEdge, setHoveredEdge] = useState<number | null>(null)
@@ -168,6 +169,7 @@ export function RelationshipMap({ relationships, data }: Props) {
               key={node.id}
               onMouseEnter={() => setHoveredNode(node.id)}
               onMouseLeave={() => setHoveredNode(null)}
+              onClick={() => onNavigate?.(node.id)}
               style={{ cursor: 'pointer' }}
             >
               {isCenter && (
