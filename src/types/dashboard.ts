@@ -1,5 +1,6 @@
 export type ProjectCategory = 'active' | 'tool' | 'analysis' | 'infrastructure' | 'archived'
 export type ProjectStatus = 'active' | 'maintained' | 'archived' | 'template'
+export type DomainId = 'sports' | 'finance' | 'infra' | 'outdoors' | 'other'
 
 export interface Project {
   id: string
@@ -11,6 +12,7 @@ export interface Project {
   path: string
   repoUrl?: string
   isGitRepo: boolean
+  domain: DomainId
   highlights?: string[]
   relatedProjects?: string[]
 }
