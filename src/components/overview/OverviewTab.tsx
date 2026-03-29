@@ -1,7 +1,7 @@
 import type { DashboardData } from '../../types/agents'
 import { StatsBar } from './StatsBar'
 import { ProjectGrid } from './ProjectGrid'
-import { RelationshipMap } from './RelationshipMap'
+import { EcosystemMap } from './EcosystemMap'
 import { SectionBlock } from '../shared/SectionBlock'
 
 interface Props {
@@ -42,9 +42,9 @@ export function OverviewTab({ data, onNavigate }: Props) {
         <ProjectGrid projects={data.projects} onNavigate={onNavigate} />
       </SectionBlock>
 
-      {data.relationships.length > 0 && (
-        <SectionBlock title="Project Relationships" count={data.relationships.length}>
-          <RelationshipMap relationships={data.relationships} data={data} onNavigate={onNavigate} />
+      {data.projects.length > 0 && (
+        <SectionBlock title="Ecosystem Map" count={data.projects.length}>
+          <EcosystemMap data={data} onNavigate={onNavigate} />
         </SectionBlock>
       )}
     </div>
