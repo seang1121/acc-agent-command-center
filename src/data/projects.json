@@ -1,0 +1,447 @@
+[
+  {
+    "id": "llm-engine",
+    "name": "Claude",
+    "description": "Claude by Anthropic — powering agents, analysis, and automation.",
+    "category": "active",
+    "techStack": [
+      "Claude API",
+      "Anthropic SDK",
+      "OpenClaw",
+      "MCP"
+    ],
+    "status": "active",
+    "path": "",
+    "repoUrl": "",
+    "isGitRepo": false,
+    "domain": "other"
+  },
+  {
+    "id": "acc-agent-command-center",
+    "name": "acc-agent-command-center",
+    "description": "Agent Command Center — self-configuring dashboard for visualizing developer automations, AI agents, MCP servers, and Claude ecosystem tools",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript",
+      "Vite",
+      "React"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\acc-agent-command-center",
+    "repoUrl": "https://github.com/seang1121/acc-agent-command-center.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "agent-dashboard",
+    "name": "agent-dashboard",
+    "description": "Operations dashboard for monitoring AI agents, cron jobs, MCP servers, and Claude ecosystem plugins",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript",
+      "Vite",
+      "React"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\agent-dashboard",
+    "repoUrl": "https://github.com/seang1121/agent-dashboard.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "ai-business-with-automated-agents",
+    "name": "ai-business-with-automated-agents",
+    "description": "A plug-and-play system that lets one person run an entire business using AI agents as automated employees. Configure it for **any** business type — pressure washing, law firm, dentist, landscaping, re",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\ai-business-with-automated-agents",
+    "repoUrl": "git@github.com:seang1121/ai-business-with-automated-agents.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "awesome-mcp-servers",
+    "name": "awesome-mcp-servers",
+    "description": "> [!IMPORTANT]",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\awesome-mcp-servers",
+    "repoUrl": "https://github.com/seang1121/awesome-mcp-servers.git",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "betting-ai-landing",
+    "name": "betting-ai-landing",
+    "description": "**Marketing and documentation site for the Betting AI Analyzer platform.**",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\betting-ai-landing",
+    "repoUrl": "git@github.com:seang1121/betting-ai-landing.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "betting-analyzer",
+    "name": "betting-analyzer",
+    "description": "Betting AI Analyzer",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\betting-analyzer",
+    "repoUrl": "git@github.com:seang1121/Betting-AI-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "cli",
+    "name": "cli",
+    "description": "Google Workspace CLI — dynamic command surface from Discovery Service",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "Rust"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\cli",
+    "repoUrl": "https://github.com/seang1121/cli.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "developer-automation-agent-visualizer",
+    "name": "developer-automation-agent-visualizer",
+    "description": "Agent Command Center — self-configuring dashboard for visualizing developer automations, AI agents, MCP servers, and Claude ecosystem tools",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript",
+      "Vite",
+      "React"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\developer-automation-agent-visualizer",
+    "repoUrl": "https://github.com/seang1121/developer-automation-agent-visualizer.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "fidelity-analyzer-clean",
+    "name": "Fidelity-Analyzer-Clean",
+    "description": "> This repository is private.",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\Fidelity-Analyzer-Clean",
+    "repoUrl": "",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "fidelity-fund-analyzer",
+    "name": "fidelity-fund-analyzer",
+    "description": "**Fidelity mutual fund analysis -- performance comparison, expense ratio optimization, and portfolio allocation across 6 investment strategies.**",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\fidelity-fund-analyzer",
+    "repoUrl": "https://github.com/seang1121/Fidelity-Fund-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "fishing-analyzer",
+    "name": "fishing-analyzer",
+    "description": "Jacksonville ICW Fishing Report Analyzer",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\fishing-analyzer",
+    "repoUrl": "git@github.com:seang1121/Fishing-Report-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "outdoors"
+  },
+  {
+    "id": "fishing-report-analyzer",
+    "name": "Fishing-Report-Analyzer",
+    "description": "Jacksonville ICW Fishing Report Analyzer",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\Fishing-Report-Analyzer",
+    "repoUrl": "git@github.com:seang1121/Fishing-Report-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "outdoors"
+  },
+  {
+    "id": "fixer-github",
+    "name": "fixer-github",
+    "description": "> This repository is private.",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\fixer-github",
+    "repoUrl": "",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "gws-cli-explore",
+    "name": "gws-cli-explore",
+    "description": "Google Workspace CLI — dynamic command surface from Discovery Service",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "Rust"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\gws-cli-explore",
+    "repoUrl": "https://github.com/googleworkspace/cli.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "henchmen-trader",
+    "name": "henchmen-trader",
+    "description": "> This repository is private.",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\henchmen-trader",
+    "repoUrl": "https://github.com/seang1121/henchmen-trader.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "march-madness",
+    "name": "march-madness",
+    "description": "March Madness bracket analyzer and generator powered by 14 years of KenPom efficiency research (2011-2025)",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\march-madness",
+    "repoUrl": "https://github.com/seang1121/ncaab-MarchMadness-Trend-analysis.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "mortgage-rate-tracker",
+    "name": "mortgage-rate-tracker",
+    "description": "**Daily mortgage rate tracking with historical logging and trend analysis.**",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\mortgage-rate-tracker",
+    "repoUrl": "git@github.com:seang1121/Mortgage-Interest-Rate-Lookup.git",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "my-project",
+    "name": "my-project",
+    "description": "Production-ready project starter kit based on Claude Code Mastery Guides V1-V5",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\my-project",
+    "repoUrl": "",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "ncaab-sweet16-analysis",
+    "name": "ncaab-sweet16-analysis",
+    "description": "March Madness bracket analyzer and generator powered by 14 years of KenPom efficiency research (2011-2025)",
+    "category": "active",
+    "techStack": [
+      "Node.js",
+      "TypeScript"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\ncaab-sweet16-analysis",
+    "repoUrl": "https://github.com/seang1121/ncaab-MarchMadness-Trend-analysis.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "nvda-explore",
+    "name": "nvda-explore",
+    "description": "NonVisual Desktop Access (NVDA)",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\nvda-explore",
+    "repoUrl": "git@github.com:seang1121/nvda.git",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "seang1121",
+    "name": "seang1121",
+    "description": "Sean Goudy",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\seang1121",
+    "repoUrl": "git@github.com:seang1121/seang1121.git",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "seang1121-profile",
+    "name": "seang1121-profile",
+    "description": "Sean Goudy",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\seang1121-profile",
+    "repoUrl": "git@github.com:seang1121/seang1121.git",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "sports-betting-mcp",
+    "name": "sports-betting-mcp",
+    "description": "MCP server for AI-powered sports betting analysis — NBA, NHL, NCAAB. 9 tools: picks, odds, injuries, line movement, game analysis, and more.",
+    "category": "active",
+    "techStack": [
+      "Python",
+      "Docker"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\sports-betting-mcp",
+    "repoUrl": "https://github.com/seang1121/sports-betting-mcp.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "sports-betting-mcp-repo",
+    "name": "sports-betting-mcp-repo",
+    "description": "MCP server for AI-powered sports betting analysis — NBA, NHL, NCAAB. 9 tools: picks, odds, injuries, line movement, game analysis, and more.",
+    "category": "active",
+    "techStack": [
+      "Python",
+      "Docker"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\sports-betting-mcp-repo",
+    "repoUrl": "git@github.com:seang1121/sports-betting-mcp.git",
+    "isGitRepo": true,
+    "domain": "infra"
+  },
+  {
+    "id": "sportsipy",
+    "name": "sportsipy",
+    "description": "**A free sports API written for Python -- pull stats from Sports Reference sites into your applications.**",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\sportsipy",
+    "repoUrl": "git@github.com:seang1121/sportsipy.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "betting-ai-analyzer",
+    "name": "Betting-AI-Analyzer",
+    "description": "> AI-powered sports betting analyzer with multi-user tracking, sport-siloed learning, real-time edge detection, and full wager management.",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\Betting-AI-Analyzer",
+    "repoUrl": "https://github.com/seang1121/Betting-AI-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  },
+  {
+    "id": "cd-ladder-analyzer",
+    "name": "CD-Ladder-Analyzer",
+    "description": "🪜 CD Ladder Simulator",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\CD-Ladder-Analyzer",
+    "repoUrl": "https://github.com/seang1121/CD-Ladder-Analyzer.git",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "investment-command-center",
+    "name": "Investment-Command-Center",
+    "description": "Full-stack investment intelligence platform with professional-grade financial models and AI-powered analysis.",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\Investment-Command-Center",
+    "repoUrl": "https://github.com/seang1121/investment-command-center.git",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "loan-officer-exam-prep-study-guide",
+    "name": "Loan-Officer-Exam-Prep-Study-Guide",
+    "description": "📚 NMLS SAFE MLO Exam Study Course",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\Loan-Officer-Exam-Prep-Study-Guide",
+    "repoUrl": "https://github.com/seang1121/Loan-Officer-Exam-Prep-Study-Guide.git",
+    "isGitRepo": true,
+    "domain": "other"
+  },
+  {
+    "id": "mortgage-interest-rate-lookup",
+    "name": "Mortgage-Interest-Rate-Lookup",
+    "description": "🏠 Mortgage Rate Tracker",
+    "category": "active",
+    "techStack": [
+      "Python"
+    ],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\Mortgage-Interest-Rate-Lookup",
+    "repoUrl": "https://github.com/seang1121/Mortgage-Interest-Rate-Lookup.git",
+    "isGitRepo": true,
+    "domain": "finance"
+  },
+  {
+    "id": "ncaab-marchmadness-trend-analysis",
+    "name": "ncaab-MarchMadness-Trend-analysis",
+    "description": "NCAAB March Madness — Full Tournament Analysis (2019–2025)",
+    "category": "active",
+    "techStack": [],
+    "status": "active",
+    "path": "C:\\Users\\Sean Goudy\\repos\\ncaab-MarchMadness-Trend-analysis",
+    "repoUrl": "https://github.com/seang1121/ncaab-MarchMadness-Trend-analysis.git",
+    "isGitRepo": true,
+    "domain": "sports"
+  }
+]
