@@ -26,11 +26,35 @@
 
 ---
 
-<!-- TODO: Replace with a real screenshot of your running dashboard -->
-<!-- Take a screenshot at localhost:3100 after running setup.py and drop it here -->
-<p align="center">
-  <img src="https://placehold.co/900x500/111827/3b82f6?text=Your+Dashboard+Here%0A%0Anpm+run+dev+%E2%86%92+localhost%3A3100&font=source-sans-pro" alt="Dashboard Preview" width="900" />
-</p>
+```
++------------------------------------------------------------------+
+|  Agent Command Center                          [Search] Ctrl+K   |
++----------+-------------------------------------------------------+
+|          |  Overview    Projects    Claude    GitHub    Automations|
+| SIDEBAR  +-------------------------------------------------------+
+|          |                                                       |
+| Overview |  +------------+  +------------+  +------------+       |
+| ------   |  | 14 Repos   |  | 8 MCP Svrs |  | 12 Agents  |      |
+| Betting  |  +------------+  +------------+  +------------+       |
+| March M. |  +------------+  +------------+  +------------+       |
+| OpenClaw |  | 5 Commands |  | 3 Hooks    |  | 6 Cron Jobs|       |
+| ACC      |  +------------+  +------------+  +------------+       |
+| Henchmen |                                                       |
+| ------   |  RELATIONSHIP MAP                                     |
+| Claude   |  +------------------------------------------------+  |
+| GitHub   |  |                                                |  |
+| Automate |  |    [Betting]---[March M.]    [Henchmen]        |  |
+|          |  |        \         /              |               |  |
+|          |  |         [Claude]----------[OpenClaw]            |  |
+|          |  |        /    |    \              |               |  |
+|          |  |    [ACC]  [MCP]  [Hooks]    [Discord]          |  |
+|          |  |                                                |  |
+|          |  +------------------------------------------------+  |
+|          |                                                       |
++----------+-------------------------------------------------------+
+```
+
+*Run `npm run dev` to see the real dashboard at localhost:3100*
 
 ---
 
