@@ -1,5 +1,16 @@
 [
   {
+    "id": "llm-engine",
+    "name": "Claude",
+    "description": "Claude by Anthropic — powering agents, analysis, and automation across the ecosystem.",
+    "category": "active",
+    "techStack": ["Claude API", "Anthropic SDK", "MCP"],
+    "status": "active",
+    "path": "",
+    "isGitRepo": false,
+    "domain": "other"
+  },
+  {
     "id": "acme-scraper",
     "name": "Acme Scraper",
     "description": "AI-powered web scraping pipeline with sentiment analysis, trend detection, and automated reporting",
@@ -9,6 +20,7 @@
     "path": "~/projects/acme-scraper",
     "repoUrl": "https://github.com/acme-labs/acme-scraper",
     "isGitRepo": true,
+    "domain": "infra",
     "highlights": ["4 AI agents", "Daily reports", "Trend detection"],
     "relatedProjects": ["acme-api", "acme-dashboard"]
   },
@@ -22,6 +34,7 @@
     "path": "~/projects/acme-api",
     "repoUrl": "https://github.com/acme-labs/acme-api",
     "isGitRepo": true,
+    "domain": "infra",
     "highlights": ["REST + WebSocket", "Rate limiting", "Auth"],
     "relatedProjects": ["acme-scraper", "acme-dashboard"]
   },
@@ -35,7 +48,86 @@
     "path": "~/projects/acme-dashboard",
     "repoUrl": "https://github.com/acme-labs/acme-dashboard",
     "isGitRepo": true,
+    "domain": "infra",
     "highlights": ["Real-time charts", "Dark theme", "Responsive"],
     "relatedProjects": ["acme-api"]
+  },
+  {
+    "id": "acme-fantasy-engine",
+    "name": "Acme Fantasy Engine",
+    "description": "AI-driven fantasy sports optimizer with lineup generation, injury tracking, and matchup analysis",
+    "category": "active",
+    "techStack": ["Python", "scikit-learn", "Flask"],
+    "status": "active",
+    "path": "~/projects/acme-fantasy-engine",
+    "repoUrl": "https://github.com/acme-labs/acme-fantasy-engine",
+    "isGitRepo": true,
+    "domain": "sports",
+    "highlights": ["ML models", "Injury feeds", "Lineup optimizer"]
+  },
+  {
+    "id": "acme-game-tracker",
+    "name": "Acme Game Tracker",
+    "description": "Live game score tracker with real-time odds movement and alert notifications",
+    "category": "active",
+    "techStack": ["TypeScript", "Node.js", "Redis"],
+    "status": "active",
+    "path": "~/projects/acme-game-tracker",
+    "repoUrl": "https://github.com/acme-labs/acme-game-tracker",
+    "isGitRepo": true,
+    "domain": "sports",
+    "highlights": ["Live scores", "Odds alerts", "Push notifications"]
+  },
+  {
+    "id": "acme-portfolio",
+    "name": "Acme Portfolio Analyzer",
+    "description": "Investment portfolio analysis with risk scoring, allocation optimization, and performance benchmarking",
+    "category": "active",
+    "techStack": ["Python", "pandas", "NumPy"],
+    "status": "active",
+    "path": "~/projects/acme-portfolio",
+    "repoUrl": "https://github.com/acme-labs/acme-portfolio",
+    "isGitRepo": true,
+    "domain": "finance",
+    "highlights": ["Risk scoring", "Monte Carlo", "Benchmark comparison"]
+  },
+  {
+    "id": "acme-rate-tracker",
+    "name": "Acme Rate Tracker",
+    "description": "Daily interest rate tracking with historical logging and trend alerts for mortgage and CD rates",
+    "category": "active",
+    "techStack": ["Python", "SQLite"],
+    "status": "active",
+    "path": "~/projects/acme-rate-tracker",
+    "repoUrl": "https://github.com/acme-labs/acme-rate-tracker",
+    "isGitRepo": true,
+    "domain": "finance",
+    "highlights": ["Daily scrape", "Trend alerts", "Historical log"]
+  },
+  {
+    "id": "acme-trail-scout",
+    "name": "Acme Trail Scout",
+    "description": "Trail condition analyzer with weather integration, difficulty scoring, and seasonal recommendations",
+    "category": "active",
+    "techStack": ["Python", "Flask"],
+    "status": "active",
+    "path": "~/projects/acme-trail-scout",
+    "repoUrl": "https://github.com/acme-labs/acme-trail-scout",
+    "isGitRepo": true,
+    "domain": "outdoors",
+    "highlights": ["Weather API", "Trail ratings", "Seasonal reports"]
+  },
+  {
+    "id": "acme-mcp-server",
+    "name": "Acme MCP Server",
+    "description": "MCP server exposing scraper, portfolio, and fantasy tools to Claude and other AI agents",
+    "category": "active",
+    "techStack": ["TypeScript", "Node.js", "Docker"],
+    "status": "active",
+    "path": "~/projects/acme-mcp-server",
+    "repoUrl": "https://github.com/acme-labs/acme-mcp-server",
+    "isGitRepo": true,
+    "domain": "other",
+    "highlights": ["9 tools", "MCP protocol", "Docker deploy"]
   }
 ]

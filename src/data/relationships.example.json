@@ -1,32 +1,20 @@
 [
-  {
-    "from": "acme-scraper",
-    "to": "acme-api",
-    "label": "feeds data",
-    "type": "data"
-  },
-  {
-    "from": "acme-api",
-    "to": "acme-dashboard",
-    "label": "serves data",
-    "type": "data"
-  },
-  {
-    "from": "acme-scraper",
-    "to": "acme-dashboard",
-    "label": "triggers refresh",
-    "type": "trigger"
-  },
-  {
-    "from": "acme-api",
-    "to": "acme-scraper",
-    "label": "webhook config",
-    "type": "trigger"
-  },
-  {
-    "from": "acme-dashboard",
-    "to": "acme-api",
-    "label": "API calls",
-    "type": "data"
-  }
+  {"from": "llm-engine", "to": "acme-scraper", "label": "powers agents", "type": "data"},
+  {"from": "llm-engine", "to": "acme-fantasy-engine", "label": "powers ML models", "type": "data"},
+  {"from": "llm-engine", "to": "acme-portfolio", "label": "powers analysis", "type": "data"},
+  {"from": "llm-engine", "to": "acme-trail-scout", "label": "powers scoring", "type": "data"},
+  {"from": "llm-engine", "to": "acme-mcp-server", "label": "MCP protocol", "type": "extends"},
+  {"from": "acme-scraper", "to": "acme-api", "label": "feeds data", "type": "data"},
+  {"from": "acme-api", "to": "acme-dashboard", "label": "serves data", "type": "data"},
+  {"from": "acme-scraper", "to": "acme-dashboard", "label": "triggers refresh", "type": "trigger"},
+  {"from": "acme-fantasy-engine", "to": "acme-game-tracker", "label": "lineup signals", "type": "data"},
+  {"from": "acme-game-tracker", "to": "acme-fantasy-engine", "label": "live scores", "type": "trigger"},
+  {"from": "acme-portfolio", "to": "acme-rate-tracker", "label": "rate feeds", "type": "data"},
+  {"from": "acme-rate-tracker", "to": "acme-dashboard", "label": "publishes alerts", "type": "publish"},
+  {"from": "acme-mcp-server", "to": "acme-scraper", "label": "exposes tools", "type": "extends"},
+  {"from": "acme-mcp-server", "to": "acme-fantasy-engine", "label": "exposes tools", "type": "extends"},
+  {"from": "acme-mcp-server", "to": "acme-portfolio", "label": "exposes tools", "type": "extends"},
+  {"from": "acme-dashboard", "to": "acme-api", "label": "API calls", "type": "data"},
+  {"from": "acme-trail-scout", "to": "acme-dashboard", "label": "publishes reports", "type": "publish"},
+  {"from": "acme-game-tracker", "to": "acme-api", "label": "streams scores", "type": "data"}
 ]
