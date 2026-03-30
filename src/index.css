@@ -16,3 +16,24 @@ body {
   background: #333;
   border-radius: 4px;
 }
+
+@keyframes llm-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.3; }
+  50% { transform: scale(1.15); opacity: 0; }
+}
+
+@keyframes llm-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* React Flow overrides for dark theme */
+.react-flow__edge-path {
+  stroke-linecap: round;
+}
+.react-flow__minimap {
+  border-radius: 6px;
+}
+.react-flow__controls button {
+  border-radius: 4px;
+}

@@ -13,6 +13,27 @@ import re
 import sys
 from pathlib import Path
 
+# ── Domain assignment ─────────────────────────────────────────────────────────
+
+DOMAIN_KEYWORDS = {
+    'sports':   ['betting', 'moltbook', 'march', 'ncaab', 'sports', 'trader', 'sportsipy'],
+    'finance':  ['fidelity', 'mortgage', 'investment', 'loan', 'cd-ladder', 'fund'],
+    'infra':    ['openclaw', 'acc-', 'agent', 'fixer', 'dashboard', 'visualizer', 'automation', 'cli', 'mcp'],
+    'outdoors': ['fishing'],
+    'other':    ['seang1121', 'nvda', 'profile', 'awesome', 'my-project'],
+}
+
+
+def assign_domain(project_id: str, project_name: str) -> str:
+    """Assign domain by keyword match against project id and name."""
+    combined = f"{project_id} {project_name}".lower()
+    for domain, keywords in DOMAIN_KEYWORDS.items():
+        if any(kw in combined for kw in keywords):
+            return domain
+    print(f"WARNING: no domain matched for '{project_id}' → assigned 'other', review manually")
+    return 'other'
+
+
 # ── Paths ──────────────────────────────────────────────────────────────────────
 
 HOME = Path.home()
@@ -222,6 +243,15 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
     projects: list[dict] = []
     seen_ids: set[str] = set()
 
+    # Load existing projects.json to preserve manually-set domain values
+    existing_projects_path = DATA_DIR / "projects.json"
+    existing_projects_by_id: dict[str, dict] = {}
+    existing_data = load_json(existing_projects_path)
+    if isinstance(existing_data, list):
+        for ep in existing_data:
+            if isinstance(ep, dict) and ep.get("id"):
+                existing_projects_by_id[ep["id"]] = ep
+
     # Common project locations (home top-level + common subdirs)
     search_dirs = [
         HOME,
@@ -274,6 +304,12 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
 
             # Detect tech stack
             tech_stack = detect_tech_stack(entry)
+
+            # Preserve existing domain if already set, otherwise assign by keyword
+            existing_project = existing_projects_by_id.get(project_id)
+            existing_domain = existing_project.get('domain') if existing_project else None
+            domain = existing_domain if existing_domain else assign_domain(project_id, entry.name)
+
             projects.append({
                 "id": project_id,
                 "name": entry.name,
@@ -284,6 +320,7 @@ def discover_repos() -> tuple[list[dict], list[dict]]:
                 "path": str(entry),
                 "repoUrl": remote_url,
                 "isGitRepo": True,
+                "domain": domain,
             })
 
     print(f"  found {len(repos)} repos / {len(projects)} projects")
@@ -522,6 +559,7 @@ def detect_llm_engine() -> dict:
         "path": "",
         "repoUrl": "",
         "isGitRepo": False,
+        "domain": "infra",
     }
 
 

@@ -17,10 +17,19 @@
     "type": "git",
     "url": "git+https://github.com/seang1121/acc-agent-command-center.git"
   },
-  "keywords": ["claude-code", "dashboard", "ai-agents", "mcp", "developer-tools", "automation"],
+  "keywords": [
+    "claude-code",
+    "dashboard",
+    "ai-agents",
+    "mcp",
+    "developer-tools",
+    "automation"
+  ],
   "author": "seang1121",
   "license": "MIT",
   "dependencies": {
+    "@dagrejs/dagre": "^3.0.0",
+    "@xyflow/react": "^12.10.2",
     "react": "^19.2.4",
     "react-dom": "^19.2.4"
   },

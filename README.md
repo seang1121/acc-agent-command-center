@@ -26,35 +26,9 @@
 
 ---
 
-```
-+------------------------------------------------------------------+
-|  Agent Command Center                          [Search] Ctrl+K   |
-+----------+-------------------------------------------------------+
-|          |  Overview    Projects    Claude    GitHub    Automations|
-| SIDEBAR  +-------------------------------------------------------+
-|          |                                                       |
-| Overview |  +------------+  +------------+  +------------+       |
-| ------   |  | 14 Repos   |  | 8 MCP Svrs |  | 12 Agents  |      |
-| Betting  |  +------------+  +------------+  +------------+       |
-| March M. |  +------------+  +------------+  +------------+       |
-| OpenClaw |  | 5 Commands |  | 3 Hooks    |  | 6 Cron Jobs|       |
-| ACC      |  +------------+  +------------+  +------------+       |
-| Henchmen |                                                       |
-| ------   |  RELATIONSHIP MAP                                     |
-| Claude   |  +------------------------------------------------+  |
-| GitHub   |  |                                                |  |
-| Automate |  |    [Betting]---[March M.]    [Henchmen]        |  |
-|          |  |        \         /              |               |  |
-|          |  |         [Claude]----------[OpenClaw]            |  |
-|          |  |        /    |    \              |               |  |
-|          |  |    [ACC]  [MCP]  [Hooks]    [Discord]          |  |
-|          |  |                                                |  |
-|          |  +------------------------------------------------+  |
-|          |                                                       |
-+----------+-------------------------------------------------------+
-```
-
-*Run `npm run dev` to see the real dashboard at localhost:3100*
+<p align="center">
+  <img src="docs/ecosystem-map.png" alt="Agent Command Center — Interactive Ecosystem Map" width="900" />
+</p>
 
 ---
 
@@ -107,8 +81,8 @@ Everything lands in `src/data/*.json`. Your data stays **gitignored** — only e
 
 ## Features
 
-### Relationship Map
-A force-directed graph that shows how your projects connect. Node positions are **auto-calculated from connectivity** — no manual layout, no config files. Add a project, add an edge, and the graph reorganizes.
+### Interactive Ecosystem Map
+A radial graph centered on your LLM engine that shows **every project, how they connect, and what data flows between them**. Domain-grouped nodes (Sports, Finance, Infra, Outdoors) orbit the center with color-coded relationship edges. Fully interactive — drag any node to rearrange, zoom in/out, pan around, and click any project for a detail panel with tech stack, status, and description. The minimap gives you a bird's-eye view of your entire ecosystem at a glance.
 
 ### Per-Project Deep Dives
 Click any project in the sidebar to see its agents, schedulers, cron jobs, scripts, repos, and MCP servers — all in one view. Category groupings configurable per project.
@@ -252,7 +226,7 @@ acc-agent-command-center/
 | **Styling** | Tailwind CSS 4.2 | Dark theme only, utility-first |
 | **Build** | Vite 8 | Sub-second hot reload |
 | **Scanner** | Python 3 (stdlib only) | Zero dependencies, runs anywhere |
-| **Graph** | Custom force-directed layout | Auto-positions from connectivity, no D3 dependency |
+| **Graph** | React Flow + custom radial layout | Interactive drag-and-drop, zoom, minimap — LLM at the center |
 
 ---
 
